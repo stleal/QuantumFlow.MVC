@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuantumFlowMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dd52423ea554c505b1b0f1163c0c72df5aecb45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c424a43e1d8c4ad7bbadc61a6c7e9ce81e2f1e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuantumFlowMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuantumFlowMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
