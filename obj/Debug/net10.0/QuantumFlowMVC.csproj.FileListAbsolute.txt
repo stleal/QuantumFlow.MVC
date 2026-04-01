@@ -116,3 +116,4 @@ c:\Users\LealS\OneDrive\fRAMily\Documents\Git\Repos\STLEAL\Hawks\MVCs\QuantumFlo
 c:\Users\LealS\OneDrive\fRAMily\Documents\Git\Repos\STLEAL\Hawks\MVCs\QuantumFlowMVC\obj\Debug\net10.0\compressed\k1yuypkj0s-{0}-bxhofijrl8-bxhofijrl8.gz
 c:\Users\LealS\OneDrive\fRAMily\Documents\Git\Repos\STLEAL\Hawks\MVCs\QuantumFlowMVC\obj\Debug\net10.0\compressed\qyfqjxpjjr-{0}-1i5kkxchgy-1i5kkxchgy.gz
 c:\Users\LealS\OneDrive\fRAMily\Documents\Git\Repos\STLEAL\Hawks\MVCs\QuantumFlowMVC\obj\Debug\net10.0\compressed\thekzwqufe-{0}-c5bf7lcz56-c5bf7lcz56.gz
+C:\Users\LealS\OneDrive\fRAMily\Documents\Git\Repos\STLEAL\Hawks\MVCs\QuantumFlowMVC\obj\Debug\net10.0\QuantumFlowMVC.sourcelink.json
