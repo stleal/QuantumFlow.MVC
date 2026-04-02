@@ -10,6 +10,17 @@
 			],
 			"isBackground": false,
 			"group": "build"
+		},
+		{
+			"label": "build-no-apphost",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"/p:UseAppHost=false"
+			],
+			"isBackground": false,
+			"group": "build"
 		}
 	]
 }

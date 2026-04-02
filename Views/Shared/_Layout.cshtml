@@ -29,10 +29,10 @@
                             <a class="nav-link app-navbar__link @(currentController == "Home" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link app-navbar__link @(currentController == "Home" && currentAction == "Privacy" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            <a class="nav-link app-navbar__link @(currentController == "Home" && currentAction == "About" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
                     </ul>
                 </div>
@@ -47,7 +47,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2026 - QuantumFlowMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2026 - QuantumFlowMVC - <a asp-area="" asp-controller="Home" asp-action="About">About Us</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

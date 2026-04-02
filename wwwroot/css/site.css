@@ -107,6 +107,98 @@ body {
   }
 }
 
+.about-shell {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.about-hero,
+.about-card {
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 45px rgba(63, 17, 24, 0.08);
+}
+
+.about-hero {
+  padding: clamp(1.75rem, 3vw, 3rem);
+}
+
+.about-eyebrow,
+.about-card__eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--nav-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-title,
+.about-card__title {
+  color: var(--nav-text);
+}
+
+.about-title {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 0.98;
+  font-weight: 760;
+}
+
+.about-copy,
+.about-card__copy,
+.about-list li {
+  color: var(--copy-muted);
+  line-height: 1.7;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.about-metric {
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(180, 35, 52, 0.08), rgba(141, 19, 35, 0.14));
+}
+
+.about-metric__value {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--nav-text);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.about-metric__label {
+  color: var(--nav-muted);
+  font-size: 0.95rem;
+}
+
+.about-card {
+  height: 100%;
+  padding: 1.75rem;
+}
+
+.about-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.about-list li + li {
+  margin-top: 0.65rem;
+}
+
+@media (max-width: 991.98px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .home-hero,
 .home-section {
   margin-bottom: 1.75rem;
