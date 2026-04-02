@@ -538,6 +538,19 @@ body {
   background: #fff;
 }
 
+.login-form__input.input-validation-error {
+  border-color: #b42334;
+  background: rgba(180, 35, 52, 0.05);
+}
+
+.login-form__error {
+  display: block;
+  margin-top: 0.45rem;
+  color: #b42334;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .login-form__link {
   color: var(--nav-accent);
   font-weight: 600;

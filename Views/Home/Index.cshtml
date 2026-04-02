@@ -39,7 +39,7 @@
                     <p class="login-form__subtitle">Enter your internal account details to open the dashboard.</p>
                 </div>
 
-                <form class="login-form" asp-controller="Home" asp-action="Login" method="post">
+                <form class="login-form" id="login-form" asp-controller="Home" asp-action="Login" method="post" nonvalidate>
                     <div class="login-form__field">
                         <label class="login-form__label" for="work-email">Username</label>
                         <input class="form-control login-form__input" id="username" name="username" type="email" placeholder="name@quantumflow.local" autocomplete="email" />
@@ -72,3 +72,40 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(function () {
+            $("#login-form").validate({
+                rules: {
+                    username: {
+                        required: true
+                    },
+                    password: {
+                        required: true
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "Username is required."
+                    },
+                    password: {
+                        required: "Password is required."
+                    }
+                },
+                errorElement: "span",
+                errorClass: "login-form__error",
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                },
+                highlight: function (element) {
+                    $(element).addClass("input-validation-error");
+                },
+                unhighlight: function (element) {
+                    $(element).removeClass("input-validation-error");
+                }
+            });
+        });
+    </script>
+}
