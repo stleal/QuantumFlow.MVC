@@ -14,20 +14,19 @@
     @{
         var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
         var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+        var isSignedIn = User.Identity?.IsAuthenticated == true;
     }
     <header>
         <nav class="navbar navbar-expand-sm app-navbar mb-4">
             <div class="container-fluid">
-                <a class="navbar-brand app-navbar__brand" asp-area="" asp-controller="Home" asp-action="Index">QuantumFlow</a>
+                <a class="navbar-brand app-navbar__brand" asp-area="" asp-controller="Login" asp-action="Index">QuantumFlow</a>
                 <button class="navbar-toggler app-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-flex align-items-center">
                     <ul class="navbar-nav gap-sm-2 align-items-sm-center">
-                        <li class="nav-item">
-                            <a class="nav-link app-navbar__link @(currentController == "Home" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+                        <li class ="nav-item">
                         <li class="nav-item">
                             <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
@@ -35,7 +34,20 @@
                             <a class="nav-link app-navbar__link @(currentController == "Prompt" ? "active" : string.Empty)" asp-area="" asp-controller="Prompt" asp-action="Index">Prompt</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link app-navbar__link @(currentController == "Home" && currentAction == "About" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                            <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "About" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="About">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            @if (isSignedIn)
+                            {
+                                <form asp-controller="Login" asp-action="Logout" method="post" class="m-0">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="nav-link app-navbar__link border-0 bg-transparent">Logout</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                            }
                         </li>
                     </ul>
                 </div>
@@ -50,7 +62,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2026 - QuantumFlowMVC - <a asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+            &copy; 2026 - QuantumFlowMVC - <a asp-area="" asp-controller="Login" asp-action="About">About Us</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,9 +1,11 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuantumFlowMVC.Models;
 
 namespace QuantumFlowMVC.Controllers;
 
+[Authorize]
 public class DashboardController : Controller
 {
     public IActionResult Index()

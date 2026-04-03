@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Sign In";
 }
 
@@ -39,7 +39,7 @@
                     <p class="login-form__subtitle">Enter your internal account details to open the dashboard.</p>
                 </div>
 
-                <form class="login-form" id="login-form" asp-controller="Home" asp-action="Login" method="post" nonvalidate>
+                <form class="login-form" id="login-form" asp-controller="Login" asp-action="Login" method="post" nonvalidate>
                     <div class="login-form__field">
                         <label class="login-form__label" for="work-email">Username</label>
                         <input class="form-control login-form__input" id="username" name="username" type="email" placeholder="name@quantumflow.local" autocomplete="email" />
@@ -48,7 +48,7 @@
                     <div class="login-form__field">
                         <div class="login-form__label-row">
                             <label class="login-form__label" for="password">Password</label>
-                            <a class="login-form__link" asp-controller="Home" asp-action="About">Need support?</a>
+                            <a class="login-form__link" asp-controller="Login" asp-action="About">Need support?</a>
                         </div>
                         <input class="form-control login-form__input" id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" />
                     </div>

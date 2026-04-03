@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QuantumFlow.MVC.Services;
 
 namespace QuantumFlowMVC.Controllers;
 
+[Authorize]
 public class PromptController : Controller
 {
   private readonly ILogger<PromptController> _logger;
@@ -37,7 +39,7 @@ public async Task<IActionResult> AskGemini(string userPrompt)
         // Return clean JSON to the frontend
         return Ok(new { result = aiResponse });
     }
-    catch (Exception ex)
+    catch (Exception)
     {
         // In a production environment, you'd log this error
         return StatusCode(500, "An error occurred while generating content.");
