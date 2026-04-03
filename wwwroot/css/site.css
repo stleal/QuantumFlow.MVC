@@ -107,6 +107,123 @@ body {
   }
 }
 
+.prompt-shell {
+  min-height: calc(100vh - 14rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0 2.5rem;
+}
+
+.prompt-panel,
+.prompt-response {
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 45px rgba(63, 17, 24, 0.08);
+}
+
+.prompt-panel {
+  width: min(100%, 760px);
+  padding: clamp(1.75rem, 3vw, 3rem);
+  text-align: center;
+}
+
+.prompt-panel__eyebrow,
+.prompt-response__label {
+  margin-bottom: 0.75rem;
+  color: var(--nav-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.prompt-panel__title {
+  margin: 0 auto 1rem;
+  max-width: 16ch;
+  color: var(--nav-text);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.02;
+  font-weight: 760;
+}
+
+.prompt-panel__copy,
+.prompt-response__copy,
+.prompt-form__error {
+  color: var(--copy-muted);
+  line-height: 1.7;
+}
+
+.prompt-form {
+  margin-top: 1.75rem;
+}
+
+.prompt-form__input {
+  min-height: 7.5rem;
+  border: 1px solid rgba(105, 18, 29, 0.14);
+  border-radius: 24px;
+  padding: 1rem 1.1rem;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.prompt-form__submit {
+  margin-top: 1rem;
+}
+
+.prompt-form__error {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.prompt-response {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.4rem;
+  text-align: left;
+}
+
+.prompt-response__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.prompt-response--error {
+  border-color: rgba(180, 35, 52, 0.28);
+  background: linear-gradient(180deg, rgba(255, 244, 245, 0.96) 0%, rgba(255, 250, 251, 0.92) 100%);
+}
+
+.prompt-response__label {
+  margin-bottom: 0.4rem;
+}
+
+.prompt-response__copy {
+  margin-bottom: 0;
+  white-space: pre-wrap;
+}
+
+.prompt-response__status {
+  color: var(--nav-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.prompt-response__textarea {
+  min-height: 14rem;
+  margin-top: 0.85rem;
+  border: 1px solid rgba(105, 18, 29, 0.14);
+  border-radius: 22px;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--nav-text);
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  resize: vertical;
+}
+
 .about-shell {
   padding: 1.5rem 0 2.5rem;
 }

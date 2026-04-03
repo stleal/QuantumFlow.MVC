@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Prompt";
+}
+
+<section class="prompt-shell">
+    <div class="prompt-panel">
+        <p class="prompt-panel__eyebrow">Gemini Flash</p>
+        <h1 class="prompt-panel__title">Hey, what's on your mind today?</h1>
+        <p class="prompt-panel__copy">Type a question below and wire it into your own server-side endpoint.</p>
+
+        <form class="prompt-form" id="prompt-form" method="post" asp-controller="Prompt" asp-action="AskGemini">
+            <label class="visually-hidden" for="query">Prompt</label>
+            <textarea class="form-control prompt-form__input" id="userPrompt" name="userPrompt" type="text" rows="4" placeholder="Ask Gemini anything relevant to your workflow..."></textarea>
+
+            <button class="btn home-btn home-btn--primary prompt-form__submit" type="submit">Send to Gemini</button>
+        </form>
+
+        <section class="prompt-response" aria-live="polite">
+            <div class="prompt-response__header">
+                <label class="prompt-response__label" for="geminiResponse">JSON response</label>
+                <span class="prompt-response__status" id="prompt-status">Idle</span>
+            </div>
+            <textarea class="form-control prompt-response__textarea" id="geminiResponse" rows="10" readonly placeholder="Gemini JSON will appear here after submit."></textarea>
+        </section>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        (() => {
+            const form = document.getElementById("prompt-form");
+            const responseField = document.getElementById("geminiResponse");
+            const statusField = document.getElementById("prompt-status");
+
+            if (!form || !responseField || !statusField) {
+                return;
+            }
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                statusField.textContent = "Loading...";
+                responseField.value = "";
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: "POST",
+                        body: new FormData(form)
+                    });
+
+                    const contentType = response.headers.get("content-type") || "";
+                    const payload = contentType.includes("application/json")
+                        ? await response.json()
+                        : await response.text();
+
+                    if (!response.ok) {
+                        throw new Error(typeof payload === "string" ? payload : JSON.stringify(payload, null, 2));
+                    }
+
+                    responseField.value = typeof payload === "string"
+                        ? payload
+                        : (payload.result ?? JSON.stringify(payload, null, 2));
+                    statusField.textContent = "Complete";
+                } catch (error) {
+                    responseField.value = error instanceof Error ? error.message : "Request failed.";
+                    statusField.textContent = "Error";
+                }
+            });
+        })();
+    </script>
+}

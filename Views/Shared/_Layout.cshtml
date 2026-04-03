@@ -32,6 +32,9 @@
                             <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link app-navbar__link @(currentController == "Prompt" ? "active" : string.Empty)" asp-area="" asp-controller="Prompt" asp-action="Index">Prompt</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link app-navbar__link @(currentController == "Home" && currentAction == "About" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
                     </ul>
